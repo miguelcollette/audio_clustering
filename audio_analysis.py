@@ -13,23 +13,17 @@ def analyse_folder(location):
   for filename in os.listdir(location):
     audio_sample = audio_file(location+"/"+filename, filename)
     audio_sample.analyse()
-    #coord = [audio_sample.main_freq, audio_sample.standard_deviation]
     coord = [audio_sample.lef]
-    #coord = audio_sample.features
     
     audio_list.append(coord)
     map_coords_objects[str(coord)].append(audio_sample)
   print(audio_list)
-  #min_max_scaler = sklearn.preprocessing.MinMaxScaler(feature_range=(0, 100))
-  #audio_list = min_max_scaler.fit_transform(audio_list)
-  #print("here {}".format(audio_list))
   return audio_list, map_coords_objects
   
 def cluster(audio_list, map_coords_objects):
   n=2
   res = KMeans(n_clusters=n, n_init = 20, max_iter = 1000).fit(audio_list)
   cluster_list=res.labels_
-  #print(cluster_list)
   clusters = [[] for i in range(n)]
   for i in range(len(cluster_list)):
     for audio_file in map_coords_objects[str(audio_list[i])]:

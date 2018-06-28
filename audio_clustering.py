@@ -6,4 +6,5 @@ if __name__ == "__main__":
 	directory = input().strip()
 	audio_list, map_coords_objects = analyse_folder(directory)
 	clusters = cluster(audio_list, map_coords_objects)
-compare_clusters_folders(["./music_speech/music_wav", "./music_speech/speech_wav"], clusters)
+	compare_clusters_folders(["./music_speech/music_wav", "./music_speech/speech_wav"], clusters)
+#the list of folders has to be changed if we deal with other datasets
