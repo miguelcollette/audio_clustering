@@ -21,7 +21,7 @@ The function cluster takes a list of list of features and the corresponding dict
 
   - audio_clustering.py : defines what the user will do, asks for the folder that needs clustering and executes the 3 functions of audio_analysis.py. If you use different folders, do change the folders to use for comparison.
   
-An dataset music_speech is also given. The 3 folders of interest in it are music_wav where music files are stored, speech_wav where speech files are stored and all where the combination of the previous two is stored.
+A dataset music_speech is also given. The 3 folders of interest in it are music_wav where music files are stored, speech_wav where speech files are stored and all where the combination of the previous two is stored.
   
 ## Execution
 
