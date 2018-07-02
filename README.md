@@ -31,10 +31,9 @@ The code is ready to use, one just needs to execute audio_clustering and will be
 
 I tried first to use the dominant frequency of the song (obtained with a fast Fourier transform) as well as the standard deviation of the amplitude of the signal. The results were not good, around 60% of the files were well clustered, with two clusters only, it's relatively low.
 
-In fact when one listens to speech, one can realise that one difference with music is that speech features more silent periods especially between sentences. So I computed the percentage of low energy frames in the file: this is done by getting the root mean-squared (RMS) of each frame of the song, and calculating the percentage of them that are below a threshold value (in our case the mean of the RMS across all the frames divided by 2). Using this feature only lead to better performances as more than 85% of the files were well clustered.
+In fact when one listens to speech, one can realise that one difference with music is that speech features more silent periods especially between sentences. So I computed the percentage of low energy frames in the file: this is done by getting the root mean-squared (RMS) of each frame of the song, and calculating the percentage of them that are below a threshold value (in our case the mean of the RMS across all the frames divided by 2). The results were much better, as described below.
 
-
-So far the work has only been done for one dataset, next step is first to add files from another dataset of speech and music and see if it puts them in the right clusters. Then  the idea is to apply it to different dataset and adapt the functions and features to cluster different genres of music.
+So far the work has only been done for one dataset, the next step is to add files from another dataset of speech and music and see if it puts them in the right clusters. Then  the idea is to adapt the features we use to differenciate different genres of music.
 
 ## Results
 
