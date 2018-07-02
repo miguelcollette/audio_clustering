@@ -27,7 +27,7 @@ A dataset music_speech is also given. The 3 folders of interest in it are music_
 
 The code is ready to use, one just needs to execute audio_clustering and will be prompted to enter the folder containing the files to cluster. This folder must contain audio files only. It will compute k lists, that represent the k clusters, and print the number of common files between these and the actual folders.
 
-## Explaination
+## Explanation
 
 I tried first to use the dominant frequency of the song (obtained with a fast Fourier transform) as well as the standard deviation of the amplitude of the signal. The results were not good, around 60% of the files were well clustered, with two clusters only, it's relatively low.
 
