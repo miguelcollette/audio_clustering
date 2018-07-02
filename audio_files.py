@@ -20,6 +20,7 @@ class audio_file:
     self.label = -1
     self.lef = 0
     self.zcr = 0
+    #Some features might be added, even id they are not all in use at the same time, depending on the type of clustering we want to achieve.
     
   def analyse(self):
     y, sr = librosa.load(self.path)
@@ -34,6 +35,8 @@ class audio_file:
       if val < threshold:
         count += 1
     self.lef = float(count) / len(rms)
+    self.mfcc = librosa.feature.mfcc(y=y, sr=sr)
+    #print(self.mfcc)
 
     
    

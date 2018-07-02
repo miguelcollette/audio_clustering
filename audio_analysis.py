@@ -17,11 +17,9 @@ def analyse_folder(location):
     
     audio_list.append(coord)
     map_coords_objects[str(coord)].append(audio_sample)
-  print(audio_list)
   return audio_list, map_coords_objects
   
-def cluster(audio_list, map_coords_objects):
-  n=2
+def cluster(audio_list, map_coords_objects, n):
   res = KMeans(n_clusters=n, n_init = 20, max_iter = 1000).fit(audio_list)
   cluster_list=res.labels_
   clusters = [[] for i in range(n)]
