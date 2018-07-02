@@ -12,14 +12,14 @@ I coded my solution in Python 3.6.
 ## Code
 
 The code is divided into 3 files:
-  - Audio_files.py : Contains the class audio_file, with the corresponding attributes, that are the name of the file, its path, and its features.
+  - audio_files.py : Contains the class audio_file, with the corresponding attributes, that are the name of the file, its path, and its features.
 The class has a function analyse that will parse the audio file, and extract the features from it. Librosa is the library that has been used for the features extraction. It also has a setter for the labels got by the clustering algorithm.
 
-  -audio_analysis.py : contains the useful functions to create clusters from a folder containing audio songs. The function analyse_folder will create the audio_file objects for each file in the folder, and analyse it to get its feature. It returns a list of list of features (one list per object) and a dictionnary that maps features to the corresponding audio_file object(s). Sklearn library has been used to perform K-means.
+  - audio_analysis.py : contains the useful functions to create clusters from a folder containing audio songs. The function analyse_folder will create the audio_file objects for each file in the folder, and analyse it to get its feature. It returns a list of list of features (one list per object) and a dictionnary that maps features to the corresponding audio_file object(s). Sklearn library has been used to perform K-means.
   
 The function cluster takes a list of list of features and the corresponding dictionnary as an input, executes a k-means algorithm, and returns clusters containing the files' names. Finally compare_clusters_folders checks for each cluster how many files it has in common with each folder. Basically the idea is to see, if the cluster is supposed to represent this folder, what is the success rate.
 
-  -audio_clustering.py : defines what the user will do, asks for the folder that needs clustering and executes the 3 functions of audio_analysis.py. If you use different folders, do change the folders to use for comparison.
+  - audio_clustering.py : defines what the user will do, asks for the folder that needs clustering and executes the 3 functions of audio_analysis.py. If you use different folders, do change the folders to use for comparison.
   
 An dataset music_speech is also given. The 3 folders of interest in it are music_wav where music files are stored, speech_wav where speech files are stored and all where the combination of the previous two is stored.
   
